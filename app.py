@@ -6,7 +6,7 @@ import numpy as np
 import pandas as pd
 
 # Load model and encoders
-model = load_model('model.h5')
+model = load_model('model.h5', compile=False)
 
 with open('label_encoder_gender.pkl', 'rb') as f:
     label_encoder_gender = pickle.load(f)
@@ -68,3 +68,4 @@ if st.button('Predict'):
         st.write("The customer is likely to churn.")
     else:
         st.write("The customer is likely to not churn.")
+
